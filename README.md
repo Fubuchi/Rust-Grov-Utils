@@ -15,6 +15,6 @@ Powershell module to help work with rust grcov local more easily. If you use grc
 
 ## Usage
 
-- When imported, the module set 2 environtment variables to make `cargo test` produce `{project_name}\*.gc\*` file, which required for generate test report
-- In powershell, go to root project folder, run `New-ProjectConfig` to generate module cofig for the first time. The config file include the output folder for test report and default pattern to find test result file, default pattern is `{root_folder}\*.gc\*`
+- When imported, the module set 2 environtment variables to make `cargo test` produce `{project_name}*.gc*` file, which required for generate test report
+- In powershell, go to root project folder, run `New-ProjectConfig` to generate module cofig for the first time. The config file include the output folder for test report and default pattern to find test result file, default pattern is `{root_folder}*.gc*`
 - In powershell, run `New-GrcovReport` to generate report file in report folder
