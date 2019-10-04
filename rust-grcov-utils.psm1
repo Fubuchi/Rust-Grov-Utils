@@ -2,17 +2,17 @@ $env:CARGO_INCREMENTAL = 0
 $env:RUSTFLAGS = "-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Zno-landing-pads"
 $configFile = "grcov.json"
 
-class ProjectConfig {
+class GrcovConfig {
   [ValidateNotNullOrEmpty()][string]$output
   [ValidateNotNullOrEmpty()][string]$pattern
 }
 
-function New-ProjectConfig () {
+function New-GrcovConfig () {
   if (Test-Path $configFile) {
     return
   }
   $curDir = Get-Location | Select-Object | ForEach-Object { $_.ProviderPath.Split("\")[-1] }
-  $config = [ProjectConfig]@{
+  $config = [GrcovConfig]@{
     output  = "report"
     pattern = "$curDir*.gc*"
   }
@@ -25,7 +25,7 @@ function New-ProjectConfig () {
 }
 
 function New-GrcovReport() {
-  $configs = Get-ConFig
+  $configs = Get-Config
   Clear-GrcovReport
   if (!(Test-Path $configs.output)) {
     New-Item -ItemType Directory -Force -Path $configs.output
@@ -40,17 +40,17 @@ function New-GrcovReport() {
 }
 
 function Clear-GrcovReport () {
-  $output = (Get-ConFig).output
+  $output = (Get-Config).output
   if (Test-Path $output) {
     Remove-Item "$output/*" -Recurse -ErrorAction Ignore
   }
 }
 
-function Get-ConFig () {
+function Get-Config () {
   if (!(Test-Path $configFile)) {
     throw "$configFile not found"
   }
-  [ProjectConfig](Get-Content $configFile | Out-String | ConvertFrom-Json)
+  [GrcovConfig](Get-Content $configFile | Out-String | ConvertFrom-Json)
 }
 
 

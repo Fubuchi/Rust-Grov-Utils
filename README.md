@@ -1,6 +1,6 @@
 # Rust-Grov-Utils
 
-Powershell module to help work with rust grcov local more easily. If you use grcov only for CI tool, you dont need this module.
+Powershell module to help work with rust grcov local more easily. If you use grcov only for CI tool, you don't need this module.
 
 ## Prerequisite - Windows side
 
@@ -11,12 +11,12 @@ Powershell module to help work with rust grcov local more easily. If you use grc
 
 ## Prerequisite - WSL side (use the package manager shipped with your distro of choice to install)
 
-- [LCOV](https://github.com/linux-test-project/lcov): for converting test report
-- [Jq](https://github.com/stedolan/jq): to read module json config
+- [LCOV](https://github.com/linux-test-project/lcov): converting test report
+- [Jq](https://github.com/stedolan/jq): read json file
 
 ## Install
 
-- Clone this repo and copy the folder to `~Documents/WindowsPowerShell/Modules` or `~Documents/PowerShell/Modules` if you are using PowerShell 6
+- Clone this repo and copy the folder to `~/Documents/WindowsPowerShell/Modules` or `~/Documents/PowerShell/Modules` if you are using PowerShell 6
 - Add this line to your powershell profile ps1 file : `Import-Module Rust-Grcov-Utils`
 - Add this function to your `.bashrc` or `.zshrc` in WSL
 
