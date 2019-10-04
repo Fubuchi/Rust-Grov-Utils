@@ -6,7 +6,7 @@ Powershell module to help work with rust grcov local more easily. If you use grc
 
 - [Rustup](https://rustup.rs/)
 - [Grcov](https://github.com/mozilla/grcov)
-- [zip](http://infozip.sourceforge.net/) (using [scoop](http://infozip.sourceforge.net/) to install)
+- [zip](http://infozip.sourceforge.net/) (use [scoop](https://github.com/lukesampson/scoop) to install)
 - [WSL](https://github.com/microsoft/WSL) (to install lcov for converting test report to html)
 
 ## Prerequisite - WSL side (use the package manager shipped with your distro of choice to install)
