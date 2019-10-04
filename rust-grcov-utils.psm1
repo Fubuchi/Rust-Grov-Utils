@@ -35,7 +35,7 @@ function New-GrcovReport() {
   $zip = "$($configs.output)/ccov.zip"
   $list = (Get-ChildItem -Path . -Recurse -Filter $configs.pattern | Resolve-Path -Relative) -join ", "
   Invoke-Expression "zip -0 $zip $list"
-  grcov $zip -s . -t lcov --llvm --branch --ignore-not-existing --ignore-dir "/*" -o "$($configs.output)/lcov.info"
+  grcov $zip -s . -t html --llvm --branch --ignore-not-existing --ignore-dir "/*" -o "$($configs.output)"
   Remove-Item $zip
 }
 
