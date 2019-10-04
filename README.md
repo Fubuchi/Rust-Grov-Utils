@@ -5,7 +5,7 @@ Powershell module to help work with rust grcov local more easily. If you use grc
 ## Prerequisite
 
 - [Rustup](https://rustup.rs/)
-- [Grcov](https://github.com/mozilla/grcov) : version must be 0.5.3+ for direct html report (which mean you must install manually)
+- [Grcov](https://github.com/mozilla/grcov) : version must be 0.5.4+ for direct html report
 - [zip](http://infozip.sourceforge.net/) (using [scoop](http://infozip.sourceforge.net/) to install)
 
 ## Install
